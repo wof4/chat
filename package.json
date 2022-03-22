@@ -1,0 +1,22 @@
+{
+  "name": "news",
+  "version": "1.0.0",
+  "description": "YH news",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run start --prefix client",
+    "server": "npm run dev --prefix server",
+    "start": "concurrently \"npm run dev --prefix server\" \"npm run start --prefix client\""
+  },
+  "keywords": [
+    "react",
+    "node.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}

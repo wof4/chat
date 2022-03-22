@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* background-image: url("../../../static/chat-background2.jpg");
+    background-position: center top;
+    background-size: cover; */
+    width: inherit;
+    /* background-color: #30181854; */
+    background-color: #ededed;
+}

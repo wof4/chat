@@ -1,0 +1,39 @@
+.plug_wrapper {
+    width: 90%;
+    height: 600px;
+    border: 1px solid rgba(128, 128, 128, 0.479);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.plug_text {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(128 128 128 / 80%);
+}
+
+.plug_hand_icon {
+    align-self: end;
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: scale3d(1, 1, 1);
+        margin-right: 10%;
+    }
+    50% {
+        transform: scale3d(1.5, 1.5, 1.5);
+
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+        margin-right: 10%;
+    }
+}
