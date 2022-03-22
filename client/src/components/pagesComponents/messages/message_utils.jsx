@@ -3,7 +3,6 @@ import ru from 'date-and-time/locale/ru';
 date.locale(ru);
 
 export const newMessageCreator = ({ currentValue, _id, name, selectedCommunication }) => {
-    console.log({ currentValue, _id, name, selectedCommunication });
     const result = {
         messageText: currentValue,
         autorId: _id,

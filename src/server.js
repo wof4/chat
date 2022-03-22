@@ -14,7 +14,7 @@ const { apiRouter } = require('./routers.js');
 
 const PORT = process.env.PORT || config.get("port");
 
-app.use(express.static(path.join(__dirname, '../../client/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.use(cors({
   methods: "GET,POST,DELETE",
@@ -23,13 +23,9 @@ app.use(cors({
   origin: 'http://localhost:3000'
 }));
 
-
 app.use(express.json());
 app.use(cookieParser())
-
 app.use('/api', apiRouter);
-
-
 
 async function start() {
   try {
