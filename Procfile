@@ -1,0 +1,1 @@
+web: node server/src/server.js -p $3001

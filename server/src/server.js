@@ -1,4 +1,5 @@
 const express = require('express');
+var path = require('path');
 const app = express();
 const cookieParser = require('cookie-parser')
 const http = require('http');
@@ -11,7 +12,10 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const { apiRouter } = require('./routers.js');
 
-const PORT = config.get("port");
+const PORT = process.env.PORT || config.get("port");
+
+app.use(express.static(path.join(__dirname, '../../client/build')));
+
 app.use(cors({
   methods: "GET,POST,DELETE",
   allowedHeaders: ['Content-Type'],
