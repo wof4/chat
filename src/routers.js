@@ -8,7 +8,7 @@ const apiRouter = new Router();
 apiRouter.post('/login', login);
 apiRouter.post('/register', Register);
 apiRouter.get('/com_data', getComData);
-apiRouter.get('/a', home);
+
 
 
 exports.apiRouter = apiRouter;

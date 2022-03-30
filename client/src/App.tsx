@@ -6,8 +6,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/chat" component={MainPage} />
-        <Route path="/" render={() => <Redirect to="/chat" />} />
+        <Route path="/" component={MainPage} />
+        <Route path="/" render={() => <Redirect to="/" />} />
       </Switch>
 
     </BrowserRouter>
