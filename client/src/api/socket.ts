@@ -1,5 +1,8 @@
 import io from 'socket.io-client';
 
-const socket = io("http://localhost:3001", { transports: ['websocket', 'polling', 'flashsocket'] });
+const production = 'https://no-name-chat.herokuapp.com';
+const dev = 'http://localhost:3001'
+
+const socket = io(production, { transports: ['websocket', 'polling', 'flashsocket'] });
 
 export default socket;
