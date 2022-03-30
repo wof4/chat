@@ -22,7 +22,7 @@ app.use(cors({
   credentials: true,
   origin: 'http://localhost:3000'
 }));
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join('/', '../client/build')));
 app.use(express.json());
 app.use(cookieParser())
 app.use('/api', apiRouter);
