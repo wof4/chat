@@ -8,7 +8,7 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/chat" component={MainPage} />
-        <Route path="/" render={() => <Redirect to="/chat" />} />
+        {/* <Route path="/" render={() => <Redirect to="/chat" />} /> */}
       </Switch>
 
     </BrowserRouter>
