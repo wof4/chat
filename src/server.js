@@ -27,6 +27,10 @@ app.use(express.json());
 app.use(cookieParser())
 app.use('/api', apiRouter);
 
+app.get('/chat', function (req, res) {
+  res.send('root');
+});
+
 async function start() {
   try {
     await mongoose.connect(config.get("mongoUri", {
