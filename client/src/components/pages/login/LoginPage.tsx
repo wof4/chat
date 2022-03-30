@@ -28,7 +28,7 @@ const LoginPage = () => {
     const errorMessage = useSelector(getErrorMessage)
     const dispatch = useDispatch()
     const [values, setValues] = React.useState<LoginType>({
-        name: 'sss', password: '111', showPassword: false
+        name: '', password: '', showPassword: false
     });
 
 
