@@ -14,7 +14,7 @@ const { apiRouter } = require('./routers.js');
 
 const PORT = process.env.PORT || config.get("port");
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, './build')));
 
 app.use(cors({
   methods: "GET,POST,DELETE",
