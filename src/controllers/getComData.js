@@ -3,7 +3,7 @@ const getComList = require('../utils/getComList');
 
 
 module.exports = async (req, res) => {
-    //  console.log('Cookies: ', req.cookies)
+     console.log('Cookies: ', req.query.params)
 
     try {
         const allUsers = await User.find({ _id: { $ne: req.query.params } })
