@@ -6,6 +6,6 @@ const User = require('../models/User');
 
 
 module.exports = async (req, res) => {
-
-    res.end("<hi>home page</hi>")
+    console.log('home');
+    return res.end('<hi>home page</hi>')
 };
