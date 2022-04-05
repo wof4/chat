@@ -8,7 +8,7 @@ const {name, w, h} = props
     return (
         <div>
             <Avatar
-                sx={{ width: w, height: h, bgcolor: '#1E90FF' }}
+                sx={{ width: w, height: h, bgcolor: '#1E90FF',zIndex: "200" }}
                 alt={name}
                 src="/static/images/avatar/1.jpg"
             />

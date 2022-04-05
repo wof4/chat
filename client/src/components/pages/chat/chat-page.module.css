@@ -10,3 +10,15 @@
     /* background-color: #30181854; */
     background-color: #ededed;
 }
+.messages{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+}

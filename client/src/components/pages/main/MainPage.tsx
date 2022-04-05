@@ -4,6 +4,7 @@ import { startListeningTc } from '../../../redux/reducers/communicationReducer';
 import { getAuthData, getErrorMessage } from '../../../selectors';
 import CustomAlert from '../../pagesComponents/alert/CustomAlert';
 import Header from '../../pagesComponents/header/Header';
+import Chat from '../chat/Chat';
 import ChatPage from '../chat/chatPage';
 import LoginPage from '../login/LoginPage';
 
@@ -21,7 +22,7 @@ const MainPage = () => {
 
   return (
     <div className={s.wrapper}>
-       {errorMessage && <CustomAlert text={errorMessage} />}
+      {errorMessage && <CustomAlert text={errorMessage} />}
       {authData && <Header />}
       {authData ? <ChatPage /> : <LoginPage />}
     </div>

@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: inherit;
+    overflow-x: auto;
+    height: 100%;
 }
 
 .message_list {
@@ -14,4 +15,9 @@
     padding: 16px;
     border-top: 1px solid rgba(128, 128, 128, 0.473);
     border-bottom: 1px solid rgba(128, 128, 128, 0.473);
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
 }

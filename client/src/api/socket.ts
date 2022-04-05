@@ -1,8 +1,11 @@
 import io from 'socket.io-client';
 
-const production = 'https://no-name-chat.herokuapp.com';
-const dev = 'http://localhost:3001'
 
-const socket = io(production, { transports: ['websocket', 'polling', 'flashsocket'] });
+const baseProd = 'https://no-name-chat.herokuapp.com';
+const baseDev = 'http://localhost:3001'
+
+const env = (process.env.NODE_ENV === "development") ? baseDev : baseProd
+
+const socket = io(env, { transports: ['websocket', 'polling', 'flashsocket'] });
 
 export default socket;

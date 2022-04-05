@@ -1,13 +1,12 @@
 .wrapper {
-    min-width: 30%;
-    max-width: 350px;
     height: 100%;
     background-color: rgb(255 255 255 / 83%);
-    overflow: auto;
+    /* overflow: auto; */
     margin: 8px;
     height: initial;
     border-radius: 10px;
     position: relative;
+    transition: 0.2s;
 }
 
 ::-webkit-scrollbar {

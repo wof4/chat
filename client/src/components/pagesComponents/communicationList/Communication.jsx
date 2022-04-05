@@ -13,6 +13,7 @@ const Communication = (props) => {
             {UserList && UserList.map((item) => {
                 return (
                     <UserCard
+                        key={item._id}
                         item={item}
                         activeId={activeId}
                         callback={callback}

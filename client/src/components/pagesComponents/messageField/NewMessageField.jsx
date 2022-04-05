@@ -12,16 +12,25 @@ export default function NewMessageField({ sendMessage, setCurrentValue, value })
     const handleChange = (e) => {
         setCurrentValue(e.target.value)
     }
-    function handleClick (){
+
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault()
+            sendMessage(value)
+        }
+    }
+    
+    const handleClick = () => {
         sendMessage(value)
     }
 
-
     return (
         <Box className={s.wrapper} >
-            <TextareaAutosize className={s.textarea}
+            <TextareaAutosize
+                className={s.textarea}
                 placeholder="Текст сообщения..."
                 onChange={handleChange}
+                onKeyPress={handleKeyPress}
                 value={value}
             />
             <Fab onClick={handleClick} size="medium" color="success">

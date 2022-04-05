@@ -68,6 +68,7 @@ export const addCurrentCommunicationTc = (user: CommunicationType): thunkType =>
 };
 
 export const getComDataTc = (autorId: string): thunkType => (dispatch) => {
+
     CommunicationApi.getComData(autorId).then((res) => {
         if (res.statusCode !== 200) {
             console.log(res)
@@ -77,7 +78,7 @@ export const getComDataTc = (autorId: string): thunkType => (dispatch) => {
             if (res.data.comList) {
                 dispatch(actions.setCommunicationLists(res.data.comList))
                 dispatch(actions.setLoadingStatus(false))
-                
+
             }
         }
     })

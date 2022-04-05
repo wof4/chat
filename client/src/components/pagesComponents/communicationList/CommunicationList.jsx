@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import s from './communicationList.module.css';
-import { setSelectedCommunicationTc, updateNewMessagesStatusTc } from '../../../redux/reducers/communicationReducer';
+import { setSelectedCommunicationTc } from '../../../redux/reducers/communicationReducer';
 import Tabs from '../tabs/Tabs';
 
 
@@ -9,8 +9,7 @@ import Tabs from '../tabs/Tabs';
 const CommunicationList = (props) => {
 
     const dispatch = useDispatch()
-
-    const { comList, allUsersList } = props
+    const { comList, allUsersList, isComOpen } = props
 
     const setCurrentCommunication = (item) => {
         if (item) {
@@ -21,7 +20,7 @@ const CommunicationList = (props) => {
     }
 
     return (
-        <div className={s.wrapper}>
+        <div className={s.wrapper} style={{ marginLeft: isComOpen ? '0' : '-30%', minWidth: '30%' }}>
             <Tabs setCurrentCommunication={setCurrentCommunication} comList={comList} allUsersList={allUsersList} />
         </div>
     );
