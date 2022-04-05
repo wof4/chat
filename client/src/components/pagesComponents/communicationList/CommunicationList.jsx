@@ -20,7 +20,7 @@ const CommunicationList = (props) => {
     }
 
     return (
-        <div className={s.wrapper} style={{ marginLeft: isComOpen ? '0' : '-30%', minWidth: '30%' }}>
+        <div className={s.wrapper} style={{ marginLeft: (isComOpen) ? '0' : '-30%', minWidth: '30%' }}>
             <Tabs setCurrentCommunication={setCurrentCommunication} comList={comList} allUsersList={allUsersList} />
         </div>
     );

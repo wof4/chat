@@ -37,6 +37,7 @@ const ChatPage = () => {
 
   const handleClose = () => {
     dispatch(setSelectedCommunicationTc(null))
+    dispatch(setisComOpenTc(true))
   }
   const handleComOpen = () => {
     dispatch(setisComOpenTc(isComOpen !== true))
@@ -63,11 +64,9 @@ const ChatPage = () => {
 
   return (
     <div className={s.wrapper}>
-      <CommunicationList isComOpen={isComOpen} authData={authData} comList={comList} allUsersList={allUsersList} />
+      <CommunicationList selectedUser={selectedUser} isComOpen={isComOpen} authData={authData} comList={comList} allUsersList={allUsersList} />
       {selectedUser &&
-
         <div className={s.messages}>
-
           <div className={s.buttons}>
             <IconButton
               onClick={() => handleComOpen()}
