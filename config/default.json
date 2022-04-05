@@ -1,4 +1,6 @@
 {
     "port": 3001,
-    "mongoUri":"mongodb+srv://admin:1Qwerty11@cluster0.nayyw.mongodb.net/mes?retryWrites=true&w=majority"
+    "mongoUri":"mongodb+srv://admin:1Qwerty11@cluster0.nayyw.mongodb.net/mes?retryWrites=true&w=majority",
+    "coockieOrigin" : "http://localhost:3000"
+
 }            

@@ -14,14 +14,13 @@ const { apiRouter } = require('./routers.js');
 
 const PORT = process.env.PORT || config.get("port");
 
-
-
 app.use(cors({
   methods: "GET,POST,DELETE",
   allowedHeaders: ['Content-Type'],
   credentials: true,
-  origin: 'http://localhost:3000'
+  origin: config.get('coockieOrigin')
 }));
+
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());
 app.use(cookieParser())

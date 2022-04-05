@@ -6,7 +6,6 @@ const User = require('../models/User');
 
 
 module.exports = async ({ messageText, autorId, to, dialogId, sendDate }) => {
-   // console.log({ messageText, autorId, to, dialogId, sendDate });
     try {
         const newMessage = new Message({ autorId, messageText, to, sendDate })
         await newMessage.save()

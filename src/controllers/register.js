@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
         if (candidate) {
             return res.json({ statusCode: 400, message: "Такой пользователь уже зарегистрирован" })
         }
-        console.log('candidate', candidate);
+
         const user = new User({ name, password: hashedPassword, avatar: '', online: false })
 
         await user.save()

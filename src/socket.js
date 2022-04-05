@@ -1,5 +1,4 @@
 const { Server } = require("socket.io");
-const User = require("./models/User");
 const createNewMessage = require("./utils/createNewMessage");
 const updateMessagesStatus = require("./utils/updateMessagesStatus");
 
