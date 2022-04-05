@@ -11,7 +11,7 @@ import TouchAppIcon from '@mui/icons-material/TouchApp';
 
 
 import { CommunicationType } from '../../../types';
-import { setSelectedCommunicationTc, addCurrentCommunicationTc } from '../../../redux/reducers/communicationReducer';
+import { setSelectedUserTc, addCurrentCommunicationTc } from '../../../redux/reducers/communicationReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgress } from '@mui/material';
 import NoUsersPlug from '../plugs/NoUsersPlug';
@@ -38,7 +38,7 @@ export default function Tabs(props: any) {
     if (!includeUserInConList.length) {
       dispatch(addCurrentCommunicationTc(user))
     }
-    dispatch(setSelectedCommunicationTc(user._id))
+    dispatch(setSelectedUserTc(user._id))
   }
 
 

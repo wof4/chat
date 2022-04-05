@@ -6,7 +6,7 @@ import { BaseThunkType, InferActionsTypes, CommunicationType, NewMessageData } f
 type initialStateType = {
     communicationList: Array<CommunicationType>
     allUsersList: Array<any>
-    selectedCommunicatin: null | CommunicationType
+    selectedUser: null | CommunicationType
     progressMessages: Array<any>
     isLoading: boolean
 
@@ -15,7 +15,7 @@ type initialStateType = {
 const initialState: initialStateType = {
     communicationList: [],
     allUsersList: [],
-    selectedCommunicatin: null,
+    selectedUser: null,
     progressMessages: [],
     isLoading: true
 };
@@ -29,8 +29,8 @@ const communicationReducer = (state = initialState, action: actionsType): initia
         case 'SET_LOADIND_STATUS': {
             return { ...state, isLoading: action.payload };
         }
-        case 'SET_SELECTED_COMMUNICATION': {
-            return { ...state, selectedCommunicatin: action.payload };
+        case 'SET_SELECTED_USER': {
+            return { ...state, selectedUser: action.payload };
         }
         case 'SET_ALL_USERS': {
             return { ...state, allUsersList: [...action.payload] };
@@ -47,7 +47,7 @@ const communicationReducer = (state = initialState, action: actionsType): initia
 export const actions = {
     setNewsMessage: (payload: string) => ({ type: 'SET_NEWS_MESSAGE', payload } as const),
     setCommunicationLists: (payload: Array<any>) => ({ type: 'SET_COMMUNICATION_LIST', payload } as const),
-    setSelectedCommunication: (payload: CommunicationType) => ({ type: 'SET_SELECTED_COMMUNICATION', payload } as const),
+    setSelectedUser: (payload: CommunicationType) => ({ type: 'SET_SELECTED_USER', payload } as const),
     setAllUsers: (payload: any) => ({ type: 'SET_ALL_USERS', payload } as const),
     addCommunicationUser: (payload: any) => ({ type: 'ADD_COMMUNICATION_USER', payload } as const),
     setLoadingStatus: (payload: any) => ({ type: 'SET_LOADIND_STATUS', payload } as const),
@@ -60,8 +60,8 @@ export const updateNewMessagesStatusTc = (userId: string, dialogId: string): thu
     SendSocket.updateNewMessagesStatus(userId, dialogId)
 };
 
-export const setSelectedCommunicationTc = (value: CommunicationType): thunkType => (dispatch) => {
-    dispatch(actions.setSelectedCommunication(value))
+export const setSelectedUserTc = (value: CommunicationType): thunkType => (dispatch) => {
+    dispatch(actions.setSelectedUser(value))
 };
 export const addCurrentCommunicationTc = (user: CommunicationType): thunkType => (dispatch) => {
     dispatch(actions.addCommunicationUser(user))

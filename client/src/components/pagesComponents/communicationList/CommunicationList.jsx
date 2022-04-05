@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import s from './communicationList.module.css';
-import { setSelectedCommunicationTc } from '../../../redux/reducers/communicationReducer';
+import { setSelectedUserTc } from '../../../redux/reducers/communicationReducer';
 import Tabs from '../tabs/Tabs';
 
 
@@ -13,9 +13,9 @@ const CommunicationList = (props) => {
 
     const setCurrentCommunication = (item) => {
         if (item) {
-            dispatch(setSelectedCommunicationTc(item._id))
+            dispatch(setSelectedUserTc(item._id))
         } else {
-            dispatch(setSelectedCommunicationTc(null))
+            dispatch(setSelectedUserTc(null))
         }
     }
 
