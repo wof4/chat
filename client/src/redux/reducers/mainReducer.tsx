@@ -69,6 +69,9 @@ export const registerUserTc = (data: AuthDataType): thunkType => (dispatch) => {
         dispatch(actions.setLoadingStatus(false))
     })
 }
+
+
+
 export const setisComOpenTc = (status: boolean): thunkType => (dispatch) => {
     dispatch(actions.setisComOpen(status))
 }

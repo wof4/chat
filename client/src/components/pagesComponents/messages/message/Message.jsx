@@ -14,7 +14,6 @@ const Message = ({ id, message, name, index, time }) => {
         prevAutor = currentAutor
     }
     currentAutor = message.autorId
-    console.log(message);
     return (
         <div className={message.autorId === id ? s.message_wrapper_left : s.message_wrapper}>
             <div className={message.autorId === id ? s.message_container_left : s.message_container}>

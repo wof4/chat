@@ -32,6 +32,30 @@ export type NewMessageData = {
     autorName: string
     to: string
 }
+
+export type DataEnterType = {
+    name: string
+    password: string
+  };
+
+
+  export type UserDataType = {
+    _id: string
+    name: string
+    password: string
+    contacts:Array<string>
+  };
+
+  export type TouchedType = {
+    name: boolean
+    password: boolean
+  };
+
+  export type EventType = React.ChangeEvent<HTMLInputElement>
+  export type MouseEventType = React.MouseEvent<HTMLButtonElement>
+
+
+
 export type ActionsType = (payload: any) => { type: string; payload: any; }
 
 
