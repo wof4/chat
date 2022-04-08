@@ -2,7 +2,7 @@ import date from 'date-and-time';
 import ru from 'date-and-time/locale/ru';
 date.locale(ru);
 
-export const newMessageCreator = ({ currentValue, _id, name, selectedUser }) => {
+export const newMessageDataCreator = ({ currentValue, _id, name, selectedUser }) => {
     const result = {
         messageText: currentValue,
         autorId: _id,
@@ -12,7 +12,7 @@ export const newMessageCreator = ({ currentValue, _id, name, selectedUser }) => 
         sendDate: Date.now(),
         progress: true
     }
-    localStorage.setItem(result.sendDate, JSON.stringify(result));
+    localStorage.setItem(result.sendDate, JSON.stringify({ user: selectedUser._id, message: result }));
 
     return result;
 }

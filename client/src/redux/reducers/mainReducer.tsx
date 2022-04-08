@@ -5,14 +5,14 @@ type initialStateType = {
     authData: any
     isLoading: boolean
     error: any
-    isComOpen: boolean
+    userListStatus: boolean
 }
 
 const initialState: initialStateType = {
     authData: null,
     isLoading: false,
     error: null,
-    isComOpen: true,
+    userListStatus: true,
 };
 
 const mainReducer = (state = initialState, action: actionsType): initialStateType => {
@@ -27,8 +27,8 @@ const mainReducer = (state = initialState, action: actionsType): initialStateTyp
         case 'SET_LOADING_STATUS': {
             return { ...state, isLoading: action.payload };
         }
-        case 'SET_ISCOM_OPEN': {
-            return { ...state, isComOpen: action.payload };
+        case 'SET_USER_LIST_STATUS': {
+            return { ...state, userListStatus: action.payload };
         }
 
         default: {
@@ -41,7 +41,7 @@ export const actions = {
     setAuthData: (payload: any) => ({ type: 'SET_AUTH_DATA', payload } as const),
     setError: (payload: any) => ({ type: 'SET_ERROR', payload } as const),
     setLoadingStatus: (payload: any) => ({ type: 'SET_LOADING_STATUS', payload } as const),
-    setisComOpen: (payload: any) => ({ type: 'SET_ISCOM_OPEN', payload } as const),
+    setUsersListStatus: (payload: any) => ({ type: 'SET_USER_LIST_STATUS', payload } as const),
 };
 
 export const loginUserTc = (data: AuthDataType): thunkType => (dispatch) => {
@@ -72,8 +72,8 @@ export const registerUserTc = (data: AuthDataType): thunkType => (dispatch) => {
 
 
 
-export const setisComOpenTc = (status: boolean): thunkType => (dispatch) => {
-    dispatch(actions.setisComOpen(status))
+export const setShowUsersListStatusTc = (status: boolean): thunkType => (dispatch) => {
+    dispatch(actions.setUsersListStatus(status))
 }
 
 

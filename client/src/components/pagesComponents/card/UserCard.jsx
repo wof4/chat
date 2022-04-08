@@ -7,17 +7,17 @@ import AvatarPhoto from '../avatar/Avatar';
 
 const UserCard = (props) => {
 
-    const { item, activeId, callback, Icon, isShowLastMesg } = props
+    const { item, activeId, openDialog, Icon, isShowLastMesg } = props
 
     return (
         <div key={item._id} className={activeId === item._id ? s.user_wrapper_active : s.user_wrapper}
-            onClick={() => callback(item)} >
+            onClick={() => openDialog(item)} >
             <div className={s.user_info}>
                 <AvatarPhoto name={item.name} w={56} h={56} />
                 <div className={s.user_text}>
-                    <Typography noWrap sx={{fontSize:"14px"}} >{item.name}</Typography>
+                    <Typography noWrap sx={{ fontSize: "14px" }} >{item.name}</Typography>
                     {item.messages && item.messages.length > 0 && isShowLastMesg
-                        ? <Typography className={s.user_last_msg} noWrap={true} sx={{fontSize:"12px"}} >
+                        ? <Typography className={s.user_last_msg} noWrap={true} sx={{ fontSize: "12px" }} >
                             {item.messages[item.messages.length - 1].messageText}
                         </Typography>
                         : ''}

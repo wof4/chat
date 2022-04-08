@@ -9,7 +9,7 @@ export type MessageType = {
     messageText: string
 }
 
-export type CommunicationType = {
+export type DialogType = {
     _id: number
     name: string
     messages: Array<MessageType>

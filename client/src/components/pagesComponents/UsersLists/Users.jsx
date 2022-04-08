@@ -4,8 +4,8 @@ import { getActiveId } from '../../../selectors';
 import UserCard from '../card/UserCard';
 
 
-const Communication = (props) => {
-    const { UserList, callback, Icon, isShowLastMesg } = props
+const Users = (props) => {
+    const { UserList, openDialog, Icon, isShowLastMesg } = props
     const activeId = useSelector(getActiveId)
 
     return (
@@ -16,7 +16,7 @@ const Communication = (props) => {
                         key={item._id}
                         item={item}
                         activeId={activeId}
-                        callback={callback}
+                        openDialog={openDialog}
                         Icon={Icon}
                         isShowLastMesg={isShowLastMesg}
                     />
@@ -27,4 +27,4 @@ const Communication = (props) => {
     );
 };
 
-export default Communication;
+export default Users;

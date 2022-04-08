@@ -1,5 +1,4 @@
 
-const { db } = require('../models/Dialog');
 const Dialog = require('../models/Dialog');
 const Message = require('../models/Message');
 const User = require('../models/User');

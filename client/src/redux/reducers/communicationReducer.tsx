@@ -1,19 +1,19 @@
 import CommunicationApi from '../../api/CommunicationApi';
 import { ResiveSocket } from '../../api/socketsResive';
 import SendSocket from '../../api/socketsSend';
-import { BaseThunkType, InferActionsTypes, CommunicationType, NewMessageData } from '../../types';
+import { BaseThunkType, InferActionsTypes, DialogType, NewMessageData } from '../../types';
 
 type initialStateType = {
-    communicationList: Array<CommunicationType>
+    dialogsList: Array<DialogType>
     allUsersList: Array<any>
-    selectedUser: null | CommunicationType
+    selectedUser: null | DialogType
     progressMessages: Array<any>
     isLoading: boolean
 
 }
 
 const initialState: initialStateType = {
-    communicationList: [],
+    dialogsList: [],
     allUsersList: [],
     selectedUser: null,
     progressMessages: [],
@@ -23,8 +23,8 @@ const initialState: initialStateType = {
 const communicationReducer = (state = initialState, action: actionsType): initialStateType => {
     switch (action.type) {
 
-        case 'SET_COMMUNICATION_LIST': {
-            return { ...state, communicationList: [...action.payload] };
+        case 'SET_DIALOGS_LIST': {
+            return { ...state, dialogsList: [...action.payload] };
         }
         case 'SET_LOADIND_STATUS': {
             return { ...state, isLoading: action.payload };
@@ -35,8 +35,8 @@ const communicationReducer = (state = initialState, action: actionsType): initia
         case 'SET_ALL_USERS': {
             return { ...state, allUsersList: [...action.payload] };
         }
-        case 'ADD_COMMUNICATION_USER': {
-            return { ...state, communicationList: [...state.communicationList, action.payload] };
+        case 'ADD_DIALOG_USER': {
+            return { ...state, dialogsList: [...state.dialogsList, action.payload] };
         }
         default: {
             return state;
@@ -46,10 +46,10 @@ const communicationReducer = (state = initialState, action: actionsType): initia
 
 export const actions = {
     setNewsMessage: (payload: string) => ({ type: 'SET_NEWS_MESSAGE', payload } as const),
-    setCommunicationLists: (payload: Array<any>) => ({ type: 'SET_COMMUNICATION_LIST', payload } as const),
-    setSelectedUser: (payload: CommunicationType) => ({ type: 'SET_SELECTED_USER', payload } as const),
+    setDialogsLists: (payload: Array<any>) => ({ type: 'SET_DIALOGS_LIST', payload } as const),
+    setSelectedUser: (payload: DialogType) => ({ type: 'SET_SELECTED_USER', payload } as const),
     setAllUsers: (payload: any) => ({ type: 'SET_ALL_USERS', payload } as const),
-    addCommunicationUser: (payload: any) => ({ type: 'ADD_COMMUNICATION_USER', payload } as const),
+    addDialogUser: (payload: any) => ({ type: 'ADD_DIALOG_USER', payload } as const),
     setLoadingStatus: (payload: any) => ({ type: 'SET_LOADIND_STATUS', payload } as const),
 };
 
@@ -60,11 +60,11 @@ export const updateNewMessagesStatusTc = (userId: string, dialogId: string): thu
     SendSocket.updateNewMessagesStatus(userId, dialogId)
 };
 
-export const setSelectedUserTc = (value: CommunicationType): thunkType => (dispatch) => {
+export const setSelectedUserTc = (value: DialogType): thunkType => (dispatch) => {
     dispatch(actions.setSelectedUser(value))
 };
-export const addCurrentCommunicationTc = (user: CommunicationType): thunkType => (dispatch) => {
-    dispatch(actions.addCommunicationUser(user))
+export const addSelectedUserInDialogListTc = (user: DialogType): thunkType => (dispatch) => {
+    dispatch(actions.addDialogUser(user))
 };
 
 export const getComDataTc = (autorId: string): thunkType => (dispatch) => {
@@ -76,9 +76,8 @@ export const getComDataTc = (autorId: string): thunkType => (dispatch) => {
             SendSocket.sendMySocketId(autorId)
             dispatch(actions.setAllUsers(res.data.allUsers))
             if (res.data.comList) {
-                dispatch(actions.setCommunicationLists(res.data.comList))
+                dispatch(actions.setDialogsLists(res.data.comList))
                 dispatch(actions.setLoadingStatus(false))
-
             }
         }
     })

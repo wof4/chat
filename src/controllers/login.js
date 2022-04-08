@@ -1,6 +1,3 @@
-const axios = require('axios');
-const getComList = require('./getComData');
-const config = require('./config');
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 
