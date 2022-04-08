@@ -67,6 +67,7 @@ const ChatPage = () => {
         userListStatus={userListStatus}
         dialogList={dialogList}
         allUsersList={allUsersList}
+        showUsersList={showUsersList}
       />
       {userData &&
         <div className={s.dialog_container}>

@@ -10,7 +10,7 @@ const UsersLists = (props) => {
 
     const dispatch = useDispatch()
     const isLoading = useSelector(getDialogsIsLoading)
-    const { dialogList, allUsersList, userListStatus } = props
+    const { dialogList, allUsersList, userListStatus, showUsersList } = props
     const tabsRef = useRef(null)
     const [tabsWidth, setTabsWidth] = useState(null)
 
@@ -22,9 +22,16 @@ const UsersLists = (props) => {
             const includeUserInDialogList = dialogList.filter((item) => item._id === user._id).length > 0
             if (includeUserInDialogList) {
                 dispatch(setSelectedUserTc(user._id))
+                if (window.innerWidth <= 668) {
+                    showUsersList(false)
+                }
+
             } else {
                 dispatch(addSelectedUserInDialogListTc(user))
                 dispatch(setSelectedUserTc(user._id))
+                if (window.innerWidth <= 668) {
+                    showUsersList(false)
+                }
             }
         } else {
             dispatch(setSelectedUserTc(null))
@@ -32,7 +39,7 @@ const UsersLists = (props) => {
     }
 
     return (
-        <div ref={tabsRef} className={s.wrapper} style={{ marginLeft: (userListStatus) ? '8px' : `-${tabsWidth}px`, minWidth: '30%' }}>
+        <div ref={tabsRef} className={s.wrapper} style={{ marginLeft: (userListStatus) ? '8px' : `-${tabsWidth}px` }}>
             <Tabs setSelectedUser={setSelectedUser} dialogList={dialogList} allUsersList={allUsersList} isLoading={isLoading} />
         </div>
     );

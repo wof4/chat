@@ -7,6 +7,7 @@
     border-radius: 10px 0 10px 10px;
     position: relative;
     transition: 0.2s;
+    min-width: 30%;
 }
 
 ::-webkit-scrollbar {
@@ -29,4 +30,11 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #6d6d6d;
+}
+
+
+@media screen and (max-width: 668px) {
+    .wrapper {
+        min-width: 99%;
+    }
 }

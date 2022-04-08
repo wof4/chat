@@ -26,3 +26,9 @@
     border-radius: 0 10px 10px 0px;
     padding: 2px;
 }
+
+@media screen and (max-width: 668px) {
+    .dialog_container {
+        min-width: 99%;
+    }
+}
